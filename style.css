@@ -1,0 +1,476 @@
+/*********************************************************************
+    GENERAL
+/****************************************************************** */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background: #fffffd;
+    color: #8c9e6e;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.w1 {
+    width: 100%;
+}
+
+.w2 {
+    width: 48%;
+    display: inline-block;
+}
+.w2:nth-of-type(5) {
+    float: right;
+}
+
+header, main {
+    max-width: 1400px;
+    align-self: center;
+}
+
+header {
+    height: 300px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h2, h3, h4, nav a, td, th, button, input, textarea {
+    font-family: "Poppins", sans-serif;
+}
+
+main {
+    /*display: flex*/
+    flex: 1 1 auto;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+}
+
+nav a {
+    display: block;
+    width: 175px;
+    padding: 12px 15px;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+nav a:nth-last-child(n+2) {
+    border-right: 1px solid #8c9e6e;
+}
+
+section li a,
+section p a,
+section td a,
+nav a:hover {
+    color: #323416;
+}
+
+nav a.active {
+    background: #8c9e6e;
+    color: #fffffd;
+}
+
+section,
+.pictures,
+footer {
+    margin-top: 50px;
+}
+
+section,
+.footer-content {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+section {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.1em;
+    overflow: hidden;
+    background-color: #edf0e8;
+}
+
+section *:not(h2) + h3 {
+    margin-top: 100px;
+}
+
+section *:not(h3) + h4 {
+    margin-top: 50px;
+}
+
+section p,
+section ul,
+section ol,
+section input,
+footer ul,
+footer p {
+    margin-bottom: 20px;
+}
+
+section p {
+    line-height: 150%;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    text-overflow: ellipsis;
+}
+
+section p,
+section li,
+section label,
+section .error-message,
+section .token,
+footer p,
+footer li {
+    font-family: "Open Sans", sans-serif;
+}
+
+section ol,
+section ul {
+    padding-left: 3em;
+    line-height: 150%;
+}
+
+section ol,
+section ul,
+section code,
+footer ul {
+    margin: 10px 0;
+}
+
+section ol {
+    list-style: none;
+}
+
+section ol > li {
+    position: relative;
+    counter-increment: step-counter;
+}
+
+section ol > li:before {
+    content: counter(step-counter) ".";
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: -25px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+section ul {
+    list-style: square;
+}
+
+.center {
+    text-align: center;
+}
+
+strong {
+    font-weight: 800;
+}
+
+em {
+    font-style: italic;
+}
+
+
+
+/*********************************************************************
+    TITLES
+/****************************************************************** */
+
+h1 {
+    text-align: center;
+}
+
+h1 #logo {
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+    box-sizing: border-box;
+    background-color: yellow;
+    background: no-repeat center/100% url("https://assets.codepen.io/950358/checkout_test_logo.svg");
+}
+
+h1 p {
+    color: #323416;
+    font-family: "Poppins", sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.5em;
+}
+
+h2 {
+    margin-bottom: 50px;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+h2 img {
+    display: block;
+    height: 130px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+h3 {
+    display: flex;
+    margin-bottom: 30px;
+    font-size: 1.6em;
+    clear: both;
+}
+
+h3::before,
+h3::after {
+    display: block;
+    /* IE fix */
+    content: "";
+    border-bottom: 1px solid #aaa;
+    flex: 1;
+    align-self: center;
+}
+
+h3::before {
+    margin-right: 1em;
+}
+
+h3::after {
+    margin-left: 1em;
+}
+
+h3 + .date {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+h4 {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+
+
+/*********************************************************************
+    FOOTER
+/****************************************************************** */
+
+footer {
+    position: relative;
+    background: url("https://assets.codepen.io/950358/checkout_t-shirt_seamless_pattern.png");
+    font-size: 1.1em;
+    color: #fffffd;
+}
+footer:before {
+    content: "";
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #8c9e6e;
+}
+
+footer .links {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+footer .links ul {
+    display: block;
+    width: 500px;
+    line-height: 150%;
+}
+
+footer .links ul:last-child {
+    text-align: right;
+}
+
+footer .social-media {
+    transition: all 300ms ease-in-out;
+}
+
+footer a:hover {
+    color: #323416;
+}
+
+footer p {
+    display: block;
+    text-align: center;
+}
+
+footer .social-media {
+    width: 32px;
+    margin: 5px 0;
+    opacity: 0.5;
+}
+
+footer .social-media:hover {
+    opacity: 1;
+}
+
+#wrapper-bouncing {
+    position: absolute;
+    top: -29px;
+    left: 0;
+}
+
+#wrapper-bouncing,
+#bouncing {
+    width: 100%;
+    height: 30px;
+}
+
+
+
+/*********************************************************************
+    FORM
+/****************************************************************** */
+
+form {
+    max-width: 300px;
+}
+
+button,
+input {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #8c9e6e;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type=text],
+form input[type=email] {
+    width: 100%;
+}
+
+form input[type=text],
+form input[type=email],
+form .frame {
+    max-width: 100%;
+    height: 2em;
+    margin-top: 7px;
+    padding: 5px 7px 3px 7px;
+    background-color: #fffffd;
+    border: 1px solid #8c9e6e;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #8c9e6e;
+    transition: all 250ms ease-in-out;
+}
+
+[id$=-error] {
+    display: none;
+}
+
+.frame {
+    opacity: 0;
+}
+
+.frame--activated {
+    opacity: 1;
+}
+
+.frame--activated.frame--invalid:not(.frame--focus) {
+    border: 1px solid #f80;
+    box-shadow: 0 0 0 1px #f80;
+    color: green;
+}
+
+.error-message {
+    display: block;
+    color: #f80;
+}
+.error-message:nth-of-type(1) {
+    margin-top: 15px;
+}
+
+#pay-button {
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 500;
+    width: 100%;
+    height: 2.2em;
+    margin-top: 20px;
+    padding: 5px 7px 3px 7px;
+    background-color: #b0bd9c;
+    border: 1px solid #b0bd9c;
+    border-radius: 5px;
+    color: #fffffd;
+    box-shadow: 0 0 0 1px #b0bd9c;
+}
+
+#pay-button:hover {
+    background-color: #8c9e6e;
+    border: 1px solid #8c9e6e;
+}
+
+#pay-button:disabled {
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-shadow: unset;
+    color: #c9d1ba;
+}
+
+#pay-button:not(:disabled) {
+    cursor: pointer;
+}
+
+.token {
+    color: dodgerblue;
+}
+
+
+
+/*********************************************************************
+    PAYMENT METHODS
+/****************************************************************** */
+
+.paymentMethod {
+    display: none;
+    width: 300px;
+}
+.paymentMethod.on {
+    display: block;
+}
+
+
+
+/*********************************************************************
+ * MEDIA QUERY */
+/****************************************************************** */
+
+@media screen and (max-width: 800px) {
+    nav {
+        flex-wrap: wrap;
+    }
+}
+@media screen and (min-width: 800px) {
+    h1 p {
+        -webkit-box-reflect: below 0 linear-gradient(transparent 15%, rgba(0, 0, 0, 0.2));
+    }
+}
